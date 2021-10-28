@@ -92,7 +92,7 @@ a:visited{
     }
     .pricing{
         flex-direction: row;
-        flex-wrap: inherit;
+        flex-wrap: nowrap;
         align-items: flex-end;
     }
     .card{
