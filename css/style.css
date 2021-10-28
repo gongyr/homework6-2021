@@ -1,0 +1,113 @@
+body{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color: #f1f1f1;
+    background-size: cover;	
+    background-repeat: no-repeat;	
+}
+body > header, .nav_links,.pricing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pricing {
+    flex-direction: row;
+}
+a:visited{
+    color:blue;
+}
+.card > header {
+    background: #288088; 
+    border: solid 2px #45adad;
+    padding: 20px 0;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.card{
+    flex-basis: 450px;
+}
+.gallery img{
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#logo{
+    animation-name: logo-grow;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+@keyframes logo-grow {
+    from{
+        width: 50px;
+        opacity: 0;
+    }
+    to{
+        width: 425px;
+        opacity: 1;
+    }
+} 
+@media all and (min-width:850px) {
+    body > header, .nav_links{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    body > header{
+        position:sticky;
+        top:0;
+    }
+    .card{
+        flex-basis: 250px;
+    }
+    .card h3 {
+        text-align: left; 
+    } 
+}
+
+@media all and (prefers-reduced-motion:reduce){
+	#logo {
+	animation: none;
+	}
+}
+
+@media print{
+    body{
+        background-image: none;
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width:100vw;
+    }
+    .pricing{
+        flex-direction: row;
+        flex-wrap: inherit;
+        align-items: flex-end;
+    }
+    .card{
+        border: 2px solid #45ADDD; 
+        flex-basis: 250px;
+    }
+    .card li:nth-child(odd)::before {
+        content: "👍";
+        
+    }
+    .card li:nth-child(even)::after {
+        content: "👍";
+        
+    }
+    #gallery, .gallery{
+        display:none;
+    }
+
+}
